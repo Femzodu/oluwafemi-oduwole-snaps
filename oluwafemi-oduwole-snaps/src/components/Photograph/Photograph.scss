@@ -1,0 +1,43 @@
+.photograph {
+  border: 1px solid #b7cec9;
+  background-color: #e4efec;
+  border-radius: 0.5rem;
+
+  &__image-container {
+    position: relative;
+  }
+
+  &__photographer {
+    border-top-left-radius: 0.75rem;
+    // color: #b7cec9;
+    padding: 0.5rem;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    background-color: #e4efec;
+    font-weight: 600;
+  }
+
+  &__tag {
+    background-color: #ffffff;
+    padding: 0.5rem 0.5rem;
+    border-radius: 1.5625rem;
+    font-weight: 600;
+    font-size: 0.875rem;
+    align-items: center;
+    border: 0.125rem solid #b7cec9;
+  }
+
+  &__tag-list {
+    display: flex;
+    gap: 0.5rem;
+    padding: 0.5rem;
+    flex-wrap: wrap;
+  }
+
+  &__image {
+    width: 100%;
+    border-top-right-radius: 0.5rem;
+    border-top-left-radius: 0.5rem;
+  }
+}
