@@ -5,7 +5,7 @@ import filter from "../../assets/images/Filter.svg";
 const Header = () => {
   return (
     <div className="header">
-      <div className="wordmark__text">Snaps</div>
+      <div className="text__wordmark">Snaps</div>
       <button className="header__button">
         Filters
         <img

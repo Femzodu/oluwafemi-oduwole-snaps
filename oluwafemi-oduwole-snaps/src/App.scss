@@ -8,9 +8,49 @@
   padding-left: 3%;
 }
 
-.wordmark__text {
-  font-size: 2rem;
-  line-height: 2.375rem;
-  font-weight: 400;
-  font-family: "Newsreader Regular";
+.text {
+  &__wordmark {
+    font-size: 2rem;
+    line-height: 2.375rem;
+    font-family: "Newsreader - Regular";
+  }
+
+  &__title {
+    font-family: "Newsreader - Light";
+    font-size: 1.625rem;
+    line-height: 2.375rem;
+    font-weight: 300;
+
+    &--italic {
+      font-family: "Newsreader - Light Italic";
+    }
+  }
+
+  &__label {
+    font-size: 0.75rem;
+    line-height: 0.9375rem;
+    font-family: "Outfit - Medium";
+  }
+
+  &__heading {
+    font-size: 1.125rem;
+    line-height: 1.4375rem;
+    font-family: "Outfit - Medium";
+  }
+
+  &__body-copy {
+    font-size: 0.75rem;
+    line-height: 0.9375rem;
+    font-family: "Outfit - Medium";
+
+    &-light {
+      font-family: "Outfit - Light";
+    }
+  }
+
+  &__small-body-copy {
+    font-size: 0.625rem;
+    line-height: 0.75rem;
+    font-family: "Outfit - Medium";
+  }
 }
