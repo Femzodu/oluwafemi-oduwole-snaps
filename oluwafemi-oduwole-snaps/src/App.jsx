@@ -1,15 +1,11 @@
 import "./App.scss";
-import photoData from "./data/photos.json";
-import tagData from "./data/tags.json";
-
-console.log(photoData);
-console.log(tagData);
+import Header from "./components/Header/Header";
 
 function App() {
   return (
-    <>
-      <h1>Snaps</h1>
-    </>
+    <div className="app">
+      <Header />
+    </div>
   );
 }
 
