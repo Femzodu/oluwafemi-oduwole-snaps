@@ -1,6 +1,6 @@
 @use "./styles/partials/global" as *;
 @use "./styles/partials/mixins" as *;
-@use "./styles/partials/typography" as *;
+@use "./styles/partials/typography";
 
 .app {
   background-color: #effaf7;
@@ -8,6 +8,12 @@
   padding-right: 3%;
   padding-left: 3%;
   color: #0c1e1a;
+}
+
+.brand {
+  font-size: 2rem;
+  line-height: 2.375rem;
+  font-weight: 400;
 }
 
 .text {
