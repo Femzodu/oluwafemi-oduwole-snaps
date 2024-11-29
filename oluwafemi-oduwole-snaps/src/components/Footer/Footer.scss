@@ -1,3 +1,7 @@
+@use "../../styles/partials/global" as *;
+@use "../../styles/partials/mixins" as *;
+@use "../../styles/partials/typography" as *;
+
 .footer {
   &__menu {
     padding-top: 2rem;
