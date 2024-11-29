@@ -7,6 +7,10 @@
   background-color: #e4efec;
   border-radius: 0.5rem;
 
+  @include tablet {
+    width: 45%;
+  }
+
   &__image-container {
     position: relative;
   }

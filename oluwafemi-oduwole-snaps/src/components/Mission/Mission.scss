@@ -6,11 +6,23 @@
   padding-top: 2rem;
   padding-bottom: 2rem;
 
+  @include tablet {
+    padding-bottom: 4rem;
+    padding-top: 3rem;
+  }
+
   &__title {
     font-family: "Newsreader";
     font-size: 1.625rem;
     line-height: 2.375rem;
     font-weight: 300;
+
+    @include tablet {
+      padding-top: 2rem;
+      font-size: 3.25rem;
+      line-height: 4rem;
+      font-weight: 300;
+    }
   }
 
   &__header {

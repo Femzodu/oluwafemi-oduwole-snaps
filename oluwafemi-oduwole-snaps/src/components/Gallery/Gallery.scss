@@ -7,4 +7,10 @@
   flex-direction: column;
   gap: 1.45rem;
   padding-bottom: 4rem;
+
+  @include tablet {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+  }
 }
