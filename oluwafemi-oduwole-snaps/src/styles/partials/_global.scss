@@ -1,4 +1,5 @@
 @use "./mixins" as *;
+@use "./typography" as *;
 
 * {
   margin: 0;
@@ -17,34 +18,4 @@ body {
     line-height: 1.375rem;
     font-weight: 900;
   }
-}
-
-@font-face {
-  font-family: "Newsreader - Regular";
-  src: url("../../assets/fonts/Newsreader-Regular.woff") format("woff");
-  font-weight: 500;
-}
-
-@font-face {
-  font-family: "Newsreader - Light";
-  src: url("../../assets/fonts/Newsreader-Light.woff") format("woff");
-  font-weight: 300;
-}
-
-@font-face {
-  font-family: "Newsreader - Light Italic";
-  src: url("../../assets/fonts/Newsreader-LightItalic.woff") format("woff");
-  font-weight: 300;
-}
-
-@font-face {
-  font-family: "Outfit - Light";
-  src: url("../../assets/fonts/Outfit-Light.woff") format("woff");
-  font-weight: 300;
-}
-
-@font-face {
-  font-family: "Outfit - Medium";
-  src: url("../../assets/fonts/Outfit-Medium.woff") format("woff");
-  font-weight: 500;
 }

@@ -1,5 +1,6 @@
 @use "./styles/partials/global" as *;
 @use "./styles/partials/mixins" as *;
+@use "./styles/partials/typography" as *;
 
 .app {
   background-color: #effaf7;
@@ -13,45 +14,46 @@
   &__wordmark {
     font-size: 2rem;
     line-height: 2.375rem;
-    font-family: "Newsreader - Regular";
+    font-family: "Newsreader";
   }
 
   &__title {
-    font-family: "Newsreader - Light";
+    font-family: "Newsreader";
     font-size: 1.625rem;
     line-height: 2.375rem;
     font-weight: 300;
 
     &--italic {
-      font-family: "Newsreader - Light Italic";
+      font-family: "Newsreader";
     }
-  }
-
-  &__label {
-    font-size: 0.75rem;
-    line-height: 0.9375rem;
-    font-family: "Outfit - Medium";
-  }
-
-  &__heading {
-    font-size: 1.125rem;
-    line-height: 1.4375rem;
-    font-family: "Outfit - Medium";
-  }
-
-  &__body-copy {
-    font-size: 0.75rem;
-    line-height: 0.9375rem;
-    font-family: "Outfit - Medium";
-
-    &-light {
-      font-family: "Outfit - Light";
-    }
-  }
-
-  &__small-body-copy {
-    font-size: 0.625rem;
-    line-height: 0.75rem;
-    font-family: "Outfit - Medium";
   }
 }
+
+//   &__label {
+//     font-size: 0.75rem;
+//     line-height: 0.9375rem;
+//     font-family: "Outfit - Medium";
+//   }
+
+//   &__heading {
+//     font-size: 1.125rem;
+//     line-height: 1.4375rem;
+//     font-family: "Outfit - Medium";
+//   }
+
+//   &__body-copy {
+//     font-size: 0.75rem;
+//     line-height: 0.9375rem;
+//     font-family: "Outfit - Medium";
+
+//     &-light {
+//       font-family: "Outfit - Light";
+//     }
+//   }
+
+//   &__small-body-copy {
+//     font-size: 0.625rem;
+//     line-height: 0.75rem;
+//     font-family: "Outfit - Medium";
+//   }
+// }

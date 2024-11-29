@@ -1,3 +1,16 @@
 .mission {
   padding-top: 2rem;
+  padding-bottom: 2rem;
+
+  &__title {
+    font-family: "Newsreader";
+    font-size: 1.625rem;
+    line-height: 2.375rem;
+    font-weight: 300;
+  }
+
+  &__header {
+    font-size: 0.875rem;
+    padding-bottom: 1.5rem;
+  }
 }
