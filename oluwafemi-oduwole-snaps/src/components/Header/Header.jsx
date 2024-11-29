@@ -1,19 +1,36 @@
-import React from "react";
+import { useState } from "react";
 import "./Header.scss";
 import filter from "../../assets/images/Filter.svg";
+import FilterButton from "../FilterButton/FilterButton";
+import tagData from "../../data/tags.json";
 
-const Header = () => {
+const Header = ({ selectedFilters, onFilterToggle }) => {
+  const [showFilters, setShowFilters] = useState(false);
+
   return (
     <div className="header">
       <div className="brand">Snaps</div>
-      <button className="header__button">
-        Filters
-        <img
-          className="header__button--image"
-          src={filter}
-          alt="filter-image"
-        />
-      </button>
+      <div className="header__filter">
+        <button
+          className="header__button"
+          onClick={() => setShowFilters(!showFilters)}
+        >
+          Filter
+          <img
+            className="header__button--image"
+            src={filter}
+            alt="filter-icon"
+          />
+        </button>
+
+        {showFilters && (
+          <FilterButton
+            tags={tagData}
+            selectedFilters={selectedFilters}
+            onFilterToggle={onFilterToggle}
+          />
+        )}
+      </div>
     </div>
   );
 };

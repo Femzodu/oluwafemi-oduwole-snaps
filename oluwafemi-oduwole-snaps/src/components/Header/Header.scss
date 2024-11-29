@@ -5,7 +5,7 @@
 .header {
   display: flex;
   justify-content: space-between;
-  padding-top: 5%;
+  padding-top: 2rem;
 
   &__button {
     border-radius: 3.125rem;
@@ -16,6 +16,7 @@
     background: transparent;
     justify-content: space-evenly;
     color: #1e6655;
+    height: 2rem;
     font-weight: 700;
     cursor: pointer;
 

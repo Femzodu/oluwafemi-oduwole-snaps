@@ -3,10 +3,18 @@ import "./Gallery.scss";
 import Photograph from "../Photograph/Photograph";
 import photoData from "../../data/photos.json";
 
-const Gallery = () => {
+const Gallery = ({ selectedFilters }) => {
+  let filteredPhotos = photoData;
+
+  if (selectedFilters.size > 0) {
+    filteredPhotos = photoData.filter((photo) =>
+      photo.tags.some((tag) => selectedFilters.has(tag))
+    );
+  }
+
   return (
     <div className="gallery">
-      {photoData.map((photo, index) => (
+      {filteredPhotos.map((photo, index) => (
         <Photograph key={index} photo={photo} />
       ))}
     </div>
