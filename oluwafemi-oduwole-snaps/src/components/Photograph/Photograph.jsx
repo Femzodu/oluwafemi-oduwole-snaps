@@ -5,7 +5,11 @@ const Photograph = ({ photo }) => {
   return (
     <div className="photograph">
       <div className="photograph__image-container">
-        <img className="photograph__image" src={photo.photo} alt="Photograph" />
+        <img
+          className="photograph__image"
+          src={photo.photo}
+          alt="Photo Description"
+        />
         <p className="photograph__photographer">{photo.photographer}</p>
       </div>
       <div className="photograph__tag-list">
