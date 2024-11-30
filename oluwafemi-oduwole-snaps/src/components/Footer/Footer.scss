@@ -4,17 +4,23 @@
 
 .footer {
   padding-top: 2rem;
+  position: relative;
+  //   padding-bottom: 2rem;
 
-  @include tablet {
+  @include desktop {
     display: flex;
-    flex-wrap: wrap;
-    gap: 2rem;
+    justify-content: space-between;
   }
 
-  &__nav {
+  &__container {
     @include tablet {
       display: flex;
+      flex-direction: row;
       justify-content: space-between;
+    }
+
+    @include desktop {
+      margin-bottom: 8rem;
     }
   }
 
@@ -22,13 +28,17 @@
     padding-top: 2rem;
     display: flex;
     flex-direction: column;
+    justify-content: space-around;
     gap: 1rem;
 
     @include tablet {
       padding-top: 0;
-      width: 30%;
-      position: relative;
-      left: 17rem;
+      flex-direction: row;
+      //   width: 30%;
+      //   position: relative;
+      //   left: 17rem;
+      //   padding-left: 5rem;
+      width: 50%;
     }
   }
 
@@ -41,14 +51,19 @@
 
   &__social {
     padding: 2rem 0;
+    height: 6rem;
     display: flex;
-    width: 20vh;
-    justify-content: space-between;
+    gap: 2rem;
 
-    @include tablet {
-      width: 20vh;
-      gap: 2rem;
+    @include desktop {
+      padding: 0;
+      width: 15vw;
+      align-items: flex-start;
     }
+  }
+
+  &__social--icon {
+    fill: #1e6655;
   }
 
   &__legal {
@@ -57,15 +72,19 @@
     color: #b7cec9;
     font-size: 0.9375rem;
     padding-bottom: 2rem;
+    gap: 1rem;
 
-    @include tablet {
-      width: 100%;
+    @include desktop {
+      padding-bottom: 3.5rem;
+      position: absolute;
+      bottom: 0;
+      left: 0;
     }
   }
+}
 
-  &__terms {
-    display: flex;
-    gap: 0.5rem;
-    margin-left: 1rem;
+.brand {
+  @include desktop {
+    width: 65vw;
   }
 }

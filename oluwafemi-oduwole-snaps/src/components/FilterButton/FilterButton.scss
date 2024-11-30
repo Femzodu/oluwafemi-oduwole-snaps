@@ -3,11 +3,15 @@
 @use "../../styles/partials/typography" as *;
 
 .filter {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.5rem;
   padding: 1rem;
   background-color: #e4efec;
+  margin: 0 -3%;
+
+  &__tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.6rem;
+  }
 
   &__button {
     padding: 0.5rem 1rem;

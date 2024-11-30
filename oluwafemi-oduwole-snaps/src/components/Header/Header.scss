@@ -5,18 +5,27 @@
 .header {
   display: flex;
   justify-content: space-between;
+  align-items: center;
   padding-top: 2rem;
+  padding-bottom: 2rem;
+
+  &__filter {
+    display: flex;
+    justify-content: flex-end;
+  }
 
   &__button {
     border-radius: 3.125rem;
     border: 0.1875rem solid #1e6655;
     display: flex;
-    width: 7.2rem;
     align-items: center;
     background: transparent;
     justify-content: space-evenly;
     color: #1e6655;
-    height: 2rem;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
     font-weight: 700;
     cursor: pointer;
 
