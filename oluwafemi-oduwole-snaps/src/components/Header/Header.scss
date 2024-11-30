@@ -38,6 +38,15 @@
       }
     }
 
+    &--active {
+      background-color: #1e6655;
+      color: #ffffff;
+
+      &:hover {
+        background-color: #1e6655;
+      }
+    }
+
     &--image {
       width: 1.3rem;
     }

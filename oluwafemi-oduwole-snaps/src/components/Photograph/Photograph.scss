@@ -9,6 +9,10 @@
 
   @include tablet {
     width: 45%;
+
+    @include desktop {
+      width: 32%;
+    }
   }
 
   &__image-container {
@@ -17,10 +21,10 @@
 
   &__photographer {
     border-top-left-radius: 0.75rem;
-    color: #1a1a1a;
+    color: #0c1e1a;
     padding: 0.5rem;
     position: absolute;
-    bottom: 0.5rem;
+    bottom: 0;
     right: 0;
     background-color: #e4efec;
     font-weight: 900;
@@ -32,7 +36,7 @@
     padding: 0.5rem 0.5rem;
     border-radius: 0.75rem;
     font-weight: 900;
-    color: #1a1a1a;
+    color: #0c1e1a;
     font-size: 0.75rem;
     align-items: center;
     border: 0.125rem solid #b7cec9;

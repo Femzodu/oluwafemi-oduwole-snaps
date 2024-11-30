@@ -5,7 +5,7 @@
 .gallery {
   display: flex;
   flex-direction: column;
-  gap: 1.45rem;
+  gap: 1rem;
   padding-bottom: 4rem;
 
   @include tablet {

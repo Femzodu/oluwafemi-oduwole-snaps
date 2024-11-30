@@ -5,7 +5,6 @@
 .footer {
   padding-top: 2rem;
   position: relative;
-  //   padding-bottom: 2rem;
 
   @include desktop {
     display: flex;
@@ -34,10 +33,6 @@
     @include tablet {
       padding-top: 0;
       flex-direction: row;
-      //   width: 30%;
-      //   position: relative;
-      //   left: 17rem;
-      //   padding-left: 5rem;
       width: 50%;
     }
   }
@@ -45,15 +40,15 @@
   &__link {
     font-family: "Outfit";
     font-weight: 800;
-    color: black;
+    color: #0c1e1a;
     text-decoration: none;
   }
 
   &__social {
     padding: 2rem 0;
-    height: 6rem;
+    height: 5.8rem;
     display: flex;
-    gap: 2rem;
+    gap: 1rem;
 
     @include desktop {
       padding: 0;
