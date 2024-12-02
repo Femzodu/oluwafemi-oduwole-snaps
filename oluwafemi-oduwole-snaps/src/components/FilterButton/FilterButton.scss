@@ -7,10 +7,6 @@
   background-color: #e4efec;
   margin: 0 -3%;
 
-  @include desktop {
-    // padding: 2rem 3rem;
-  }
-
   &__tags {
     display: flex;
     flex-wrap: wrap;
