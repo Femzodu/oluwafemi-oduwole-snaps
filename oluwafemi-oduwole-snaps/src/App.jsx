@@ -38,19 +38,21 @@ function App() {
         isFilterOpen={isFilterOpen}
         onFilterButtonClick={handleFilterButtonClick}
       />
-      <main>
-        {isFilterOpen && (
-          <FilterButton
-            tags={tagData}
-            selectedFilters={selectedFilters}
-            onFilterToggle={toggleFilter}
-          />
-        )}
 
-        <>
+      <main className="app__content">
+        {isFilterOpen && (
+          <div className="filter">
+            <FilterButton
+              tags={tagData}
+              selectedFilters={selectedFilters}
+              onFilterToggle={toggleFilter}
+            />
+          </div>
+        )}
+        <div>
           <Mission />
           <Gallery selectedFilters={selectedFilters} />
-        </>
+        </div>
       </main>
 
       <Footer />
