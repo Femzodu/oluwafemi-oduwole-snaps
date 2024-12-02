@@ -12,6 +12,10 @@
 
     @include desktop {
       width: 30vw;
+
+      .gallery--filtered & {
+        width: 48%;
+      }
     }
   }
 

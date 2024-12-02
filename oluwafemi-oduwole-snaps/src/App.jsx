@@ -41,17 +41,18 @@ function App() {
 
       <main className="app__content">
         {isFilterOpen && (
-          <div className="filter">
-            <FilterButton
-              tags={tagData}
-              selectedFilters={selectedFilters}
-              onFilterToggle={toggleFilter}
-            />
-          </div>
+          <FilterButton
+            tags={tagData}
+            selectedFilters={selectedFilters}
+            onFilterToggle={toggleFilter}
+          />
         )}
         <div>
           <Mission />
-          <Gallery selectedFilters={selectedFilters} />
+          <Gallery
+            selectedFilters={selectedFilters}
+            isFilterOpen={isFilterOpen}
+          />
         </div>
       </main>
 

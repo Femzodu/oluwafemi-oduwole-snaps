@@ -8,14 +8,17 @@
   margin: 0 -3%;
 
   @include desktop {
-    width: 25%;
-    margin: 0;
+    // padding: 2rem 3rem;
   }
 
   &__tags {
     display: flex;
     flex-wrap: wrap;
     gap: 0.6rem;
+
+    @include desktop {
+      width: 30%;
+    }
   }
 
   &__button {

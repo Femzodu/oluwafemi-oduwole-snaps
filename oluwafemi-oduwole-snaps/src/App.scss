@@ -15,18 +15,6 @@
       flex-direction: row-reverse;
     }
   }
-
-  .filter {
-    @include desktop {
-      position: fixed;
-      right: 0;
-      top: 0;
-      height: 100%;
-      width: 28%;
-      z-index: 10;
-      padding-right: 2rem;
-    }
-  }
 }
 
 .brand {
