@@ -9,41 +9,29 @@ const Footer = () => {
         <div className="footer__menu">
           <div>
             <p>
-              <a href="/photographers" className="footer__link">
-                For photographers
-              </a>
+              <a className="footer__link">For photographers</a>
             </p>
 
             <p>
-              <a href="/hire" className="footer__link">
-                Hire talent
-              </a>
+              <a className="footer__link">Hire talent</a>
             </p>
 
             <p>
-              <a href="/inspiration" className="footer__link">
-                Inspiration
-              </a>
+              <a className="footer__link">Inspiration</a>
             </p>
           </div>
 
           <div>
             <p>
-              <a href="/about" className="footer__link">
-                About
-              </a>
+              <a className="footer__link">About</a>
             </p>
 
             <p>
-              <a href="/careers" className="footer__link">
-                Careers
-              </a>
+              <a className="footer__link">Careers</a>
             </p>
 
             <p>
-              <a href="/support" className="footer__link">
-                Support
-              </a>
+              <a className="footer__link">Support</a>
             </p>
           </div>
         </div>
@@ -115,7 +103,7 @@ const Footer = () => {
       <div className="footer__legal">
         <p>© 2024 Snaps</p>
 
-        <p>·</p>
+        <p></p>
         <p>Terms</p>
         <p>Privacy</p>
         <p>Cookies</p>
