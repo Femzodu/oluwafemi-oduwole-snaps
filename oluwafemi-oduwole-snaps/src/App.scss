@@ -9,11 +9,15 @@
   padding-left: 3%;
   color: #0c1e1a;
 
-  &__content {
+  &__layout {
     @include desktop {
       display: flex;
       flex-direction: row-reverse;
     }
+  }
+
+  &__content {
+    flex: 1;
   }
 }
 

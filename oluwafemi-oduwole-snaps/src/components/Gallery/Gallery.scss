@@ -12,11 +12,7 @@
     justify-content: space-around;
   }
 
-  @include desktop {
-    margin-right: 0%;
-
-    &.gallery--filtered {
-      margin-right: 28%;
-    }
+  &.gallery--filtered {
+    margin-right: 10%;
   }
 }

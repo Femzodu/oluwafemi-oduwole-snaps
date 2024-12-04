@@ -12,15 +12,13 @@ function App() {
   const [isFilterOpen, setIsFilterOpen] = useState(false);
 
   const toggleFilter = (tag) => {
-    const newFilters = new Set(selectedFilters);
-
-    if (newFilters.has(tag)) {
-      newFilters.delete(tag);
-    } else {
-      newFilters.add(tag);
-    }
-
-    setSelectedFilters(newFilters);
+    setSelectedFilters((selectedFilters) => {
+      const newFilters = new Set();
+      if (!selectedFilters.has(tag)) {
+        newFilters.add(tag);
+      }
+      return newFilters;
+    });
   };
 
   const handleFilterButtonClick = () => {
@@ -39,7 +37,7 @@ function App() {
         onFilterButtonClick={handleFilterButtonClick}
       />
 
-      <main className="app__content">
+      <main className="app__layout">
         {isFilterOpen && (
           <FilterButton
             tags={tagData}
@@ -47,7 +45,7 @@ function App() {
             onFilterToggle={toggleFilter}
           />
         )}
-        <div>
+        <div className="app__content">
           <Mission />
           <Gallery
             selectedFilters={selectedFilters}

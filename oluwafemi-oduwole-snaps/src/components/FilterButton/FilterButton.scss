@@ -7,14 +7,14 @@
   background-color: #e4efec;
   margin: 0 -3%;
 
+  @include desktop {
+    width: 28%;
+  }
+
   &__tags {
     display: flex;
     flex-wrap: wrap;
     gap: 0.6rem;
-
-    @include desktop {
-      width: 30%;
-    }
   }
 
   &__button {
