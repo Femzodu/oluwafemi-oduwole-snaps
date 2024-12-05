@@ -1,15 +1,56 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import "./App.scss";
 import Header from "./components/Header/Header";
 import FilterButton from "./components/FilterButton/FilterButton";
 import Mission from "./components/Mission/Mission";
 import Gallery from "./components/Gallery/Gallery";
 import Footer from "./components/Footer/Footer";
-import tagData from "./data/tags.json";
+import api from "./utils/api";
 
 function App() {
   const [selectedFilters, setSelectedFilters] = useState(new Set());
   const [isFilterOpen, setIsFilterOpen] = useState(false);
+  const [tags, setTags] = useState([]);
+  const [error, setError] = useState(null);
+  const [photos, setPhotos] = useState([]);
+
+  useEffect(() => {
+    const loadTags = async () => {
+      try {
+        const tagData = await api.fetchTags();
+        setTags(tagData);
+      } catch (error) {
+        setError("Unable to retrieve filters");
+        console.error(error);
+      }
+    };
+
+    loadTags();
+  }, []);
+
+  useEffect(() => {
+    const loadPhotos = async () => {
+      try {
+        const photoData = await api.fetchPhotos();
+        setPhotos(photoData);
+      } catch (error) {
+        setError("Unable to retrieve images");
+        console.error(error);
+      }
+    };
+
+    loadPhotos();
+  }, []);
+
+  const getFilteredPhotos = () => {
+    if (selectedFilters.size === 0) {
+      return photos;
+    } else {
+      return photos.filter((photo) =>
+        photo.tags.some((tag) => selectedFilters.has(tag))
+      );
+    }
+  };
 
   const toggleFilter = (tag) => {
     setSelectedFilters((selectedFilters) => {
@@ -40,7 +81,7 @@ function App() {
       <main className="app__layout">
         {isFilterOpen && (
           <FilterButton
-            tags={tagData}
+            tags={tags}
             selectedFilters={selectedFilters}
             onFilterToggle={toggleFilter}
           />
