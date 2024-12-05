@@ -11,7 +11,9 @@ const Header = ({
 }) => {
   return (
     <div className="header">
-      <div className="brand">Snaps</div>
+      <a href="/" className="brand">
+        Snaps
+      </a>
       <div className="header__filter">
         <button
           className={`header__button ${

@@ -5,7 +5,9 @@ const Footer = () => {
   return (
     <section className="footer">
       <div className="footer__container">
-        <div className="brand"> Snaps </div>
+        <a href="/" className="brand">
+          Snaps
+        </a>
         <div className="footer__menu">
           <div>
             <p>

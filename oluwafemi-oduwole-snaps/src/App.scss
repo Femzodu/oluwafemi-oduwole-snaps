@@ -25,4 +25,18 @@
   font-size: 2rem;
   line-height: 2.375rem;
   font-weight: 400;
+  text-decoration: none;
+  color: inherit;
+
+  @include tablet {
+    color: #0c1e1a;
+  }
+
+  @include desktop {
+    color: #0c1e1a;
+
+    &:hover {
+      cursor: pointer;
+    }
+  }
 }
