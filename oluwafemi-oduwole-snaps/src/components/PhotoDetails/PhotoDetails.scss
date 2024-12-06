@@ -1,0 +1,41 @@
+@use "../../styles/partials/global.scss" as *;
+@use "../../styles/partials/mixins.scss" as *;
+@use "../../styles/partials/typography.scss" as *;
+
+.photo-details {
+  padding: 2rem;
+
+  &__header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+  }
+
+  &__home {
+    display: flex;
+    align-items: 0.5rem;
+    text-decoration: none;
+  }
+}
+
+.brand {
+  font-size: 2rem;
+  line-height: 2.375rem;
+  font-weight: 400;
+  text-decoration: none;
+  color: inherit;
+
+  @include tablet {
+    color: #0c1e1a;
+  }
+
+  @include desktop {
+    color: #0c1e1a;
+
+    &:hover {
+      cursor: pointer;
+    }
+  }
+}

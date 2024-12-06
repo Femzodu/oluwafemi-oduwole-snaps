@@ -1,13 +1,12 @@
 import React from "react";
 import "./Gallery.scss";
 import Photograph from "../Photograph/Photograph";
-import photoData from "../../data/photos.json";
 
-const Gallery = ({ selectedFilters, isFilterOpen }) => {
-  let filteredPhotos = photoData;
+const Gallery = ({ selectedFilters, isFilterOpen, photos }) => {
+  let filteredPhotos = photos;
 
   if (selectedFilters.size > 0) {
-    filteredPhotos = photoData.filter((photo) =>
+    filteredPhotos = photos.filter((photo) =>
       photo.tags.some((tag) => selectedFilters.has(tag))
     );
   }

@@ -1,14 +1,6 @@
-import { useState } from "react";
 import "./Header.scss";
-import FilterButton from "../FilterButton/FilterButton";
-import tagData from "../../data/tags.json";
 
-const Header = ({
-  selectedFilters,
-  onFilterToggle,
-  isFilterOpen,
-  onFilterButtonClick,
-}) => {
+const Header = ({ isFilterOpen, onFilterButtonClick }) => {
   return (
     <div className="header">
       <a href="/" className="brand">

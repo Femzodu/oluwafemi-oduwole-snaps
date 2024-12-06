@@ -6,6 +6,8 @@ import Mission from "./components/Mission/Mission";
 import Gallery from "./components/Gallery/Gallery";
 import Footer from "./components/Footer/Footer";
 import api from "./utils/api";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import HomePage from "./pages/HomePage/HomePage";
 
 function App() {
   const [selectedFilters, setSelectedFilters] = useState(new Set());
@@ -72,8 +74,6 @@ function App() {
   return (
     <div className="app">
       <Header
-        selectedFilters={selectedFilters}
-        onFilterToggle={toggleFilter}
         isFilterOpen={isFilterOpen}
         onFilterButtonClick={handleFilterButtonClick}
       />
@@ -86,11 +86,18 @@ function App() {
             onFilterToggle={toggleFilter}
           />
         )}
+
+        <BrowserRouter>
+          <Routes>
+            <Route element={<HomePage />} path="/" />
+          </Routes>
+        </BrowserRouter>
         <div className="app__content">
           <Mission />
           <Gallery
             selectedFilters={selectedFilters}
             isFilterOpen={isFilterOpen}
+            photos={photos}
           />
         </div>
       </main>
