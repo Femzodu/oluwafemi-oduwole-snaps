@@ -1,6 +1,6 @@
-import React from "react";
 import "./Gallery.scss";
 import Photograph from "../Photograph/Photograph";
+import { Link } from "react-router-dom";
 
 const Gallery = ({ selectedFilters, isFilterOpen, photos }) => {
   let filteredPhotos = photos;
@@ -14,7 +14,9 @@ const Gallery = ({ selectedFilters, isFilterOpen, photos }) => {
   return (
     <div className={`gallery ${isFilterOpen ? "gallery--filtered" : ""}`}>
       {filteredPhotos.map((photo, index) => (
-        <Photograph key={index} photo={photo} />
+        <Link to={`/photos/${photo.id}`} key={photo.id}>
+          <Photograph key={index} photo={photo} />
+        </Link>
       ))}
     </div>
   );

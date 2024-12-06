@@ -17,8 +17,48 @@ const fetchPhotos = async () => {
     const response = await axios.get(`${api_url}/photos?api_key=${api_key}`);
     return response.data;
   } catch (error) {
-    console.error("Unable to retrieve images", error);
+    console.error("Unable to retrieve pictures", error);
   }
 };
 
-export default { fetchTags, fetchPhotos };
+const fetchPhotoById = async (id) => {
+  try {
+    const response = await axios.get(
+      `${api_url}/photos/${id}?api_key=${api_key}`
+    );
+    return response.data;
+  } catch (error) {
+    console.error("Unable to retrieve picture details", error);
+  }
+};
+
+const fetchComments = async (id) => {
+  try {
+    const response = await axios.get(
+      `${api_url}/photos/${id}/comments?api_key=${api_key}`
+    );
+    return response.data;
+  } catch (error) {
+    console.error("Unable to retrieve comments", error);
+  }
+};
+
+const submitComment = async (id, comment) => {
+  try {
+    const response = await axios.post(
+      `${api_url}/photos/${id}/comments?api_key=${api_key}`,
+      { comment }
+    );
+    return response.data;
+  } catch (error) {
+    console.error("Unable to submit comment", error);
+  }
+};
+
+export default {
+  fetchTags,
+  fetchPhotos,
+  fetchPhotoById,
+  fetchComments,
+  submitComment,
+};

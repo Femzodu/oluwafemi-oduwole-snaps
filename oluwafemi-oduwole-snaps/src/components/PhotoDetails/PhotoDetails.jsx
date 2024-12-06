@@ -1,14 +1,66 @@
+import { useEffect, useState } from "react";
+import { useParams, Link } from "react-router-dom";
+import api from "../../utils/api";
 import "./photodetails.scss";
 
 const PhotoDetails = () => {
+  const { id } = useParams();
+  console.log(id);
+  const [photo, setPhoto] = useState(null);
+  const [comments, setComments] = useState([]);
+  const [newComment, setNewComment] = useState({ name: "", comment: "" });
+  const [error, setError] = useState(null);
+
+  useEffect(() => {
+    const loadPhotoDetails = async () => {
+      try {
+        const photo = await api.fetchPhotoById(id);
+        setPhoto(photo);
+      } catch (error) {
+        setError("Unable to retrieve photo details");
+        console.error(error);
+      }
+    };
+
+    loadPhotoDetails();
+  }, [id]);
+
+  useEffect(() => {
+    const loadComments = async () => {
+      try {
+        const commentData = await api.fetchComments(id);
+        setComments(commentData);
+      } catch (error) {
+        setError("Unable to retrieve comments");
+        console.error(error);
+      }
+    };
+
+    loadComments();
+  }, [id]);
+
+  const handleFormSubmit = async (e) => {
+    e.preventDefault();
+    try {
+      await api.postComment(id, newComment);
+      setNewComment({ name: "", comment: "" });
+      const updatedComments = await api.fetchComments(id);
+      setComments(updatedComments);
+    } catch (error) {
+      setError("Unable to post comment");
+      console.error(error);
+    }
+  };
+
+  if (!photo) return null;
+
   return (
     <div className="photo-details">
-      <div className="photo-details__header">
-        <a href="/" className="brand">
+      <header className="photo-details__header">
+        <Link to="/" className="brand">
           Snaps
-        </a>
-
-        <a href="/" className="photo-details__home">
+        </Link>
+        <Link to="/" className="photo-details__home">
           <svg
             className="photo-details__home--button"
             width="21"
@@ -23,8 +75,37 @@ const PhotoDetails = () => {
             />
           </svg>
           Home
-        </a>
-      </div>
+        </Link>
+      </header>
+
+      <main className="photo-details__content">
+        <img
+          src={photo.photo}
+          alt={photo.photoDescription}
+          className="photo-details__image"
+        />
+
+        <div className="photo-details__info">
+          <div className="photo-details__tags">
+            {photo.tags.map((tag) => (
+              <div key={tag} className="photo-details__tag">
+                {tag}
+              </div>
+            ))}
+          </div>
+          <div className="photo-details__info">
+            <div>{photo.likes} likes</div>
+            <time dateTime={photo.timestamp}>
+              {/* {new Date(photo.timestamp).toLocaleDateString("", {
+                month: "2-digit",
+                day: "2-digit",
+                year: "numeric",
+              })} */}
+            </time>
+          </div>
+          <div>Photo by {photo.photographer}</div>
+        </div>
+      </main>
     </div>
   );
 };
