@@ -6,6 +6,7 @@
   border: 1px solid #b7cec9;
   background-color: #e4efec;
   border-radius: 0.5rem;
+  // padding-right: 1rem;
 
   @include tablet {
     width: 45%;
@@ -38,10 +39,16 @@
   &__tag {
     background-color: #ffffff;
     padding: 0.5rem 0.5rem;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
     border-radius: 0.75rem;
     font-weight: 900;
     color: #0c1e1a;
     font-size: 0.75rem;
+    text-decoration: none;
+
     align-items: center;
     border: 0.125rem solid #b7cec9;
     font-family: "Outfit";
@@ -53,6 +60,7 @@
     padding: 0.5rem;
     flex-wrap: wrap;
     justify-content: flex-start;
+    text-decoration: none;
   }
 
   &__image {

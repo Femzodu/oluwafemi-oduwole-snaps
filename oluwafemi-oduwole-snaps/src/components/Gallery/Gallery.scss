@@ -13,6 +13,8 @@
   }
 
   &.gallery--filtered {
-    margin-right: 10%;
+    @include desktop {
+      margin-right: 10%;
+    }
   }
 }

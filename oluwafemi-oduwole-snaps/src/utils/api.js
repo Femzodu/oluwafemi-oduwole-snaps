@@ -43,11 +43,11 @@ const fetchComments = async (id) => {
   }
 };
 
-const submitComment = async (id, comment) => {
+const postComment = async (id, comment) => {
   try {
     const response = await axios.post(
       `${api_url}/photos/${id}/comments?api_key=${api_key}`,
-      { comment }
+      { name: comment.name, comment: comment.comment }
     );
     return response.data;
   } catch (error) {
@@ -60,5 +60,5 @@ export default {
   fetchPhotos,
   fetchPhotoById,
   fetchComments,
-  submitComment,
+  postComment,
 };

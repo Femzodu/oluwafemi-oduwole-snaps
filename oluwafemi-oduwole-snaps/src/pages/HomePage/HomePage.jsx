@@ -1,13 +1,10 @@
 import { useEffect, useState } from "react";
-// import "./App.scss";
 import "./HomePage.scss";
 import Header from "../../components/Header/Header";
 import FilterButton from "../../components/FilterButton/FilterButton";
 import Mission from "../../components/Mission/Mission";
 import Gallery from "../../components/Gallery/Gallery";
-import Footer from "../../components/Footer/Footer";
 import api from "../../utils/api";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 function HomePage() {
   const [selectedFilters, setSelectedFilters] = useState(new Set());
