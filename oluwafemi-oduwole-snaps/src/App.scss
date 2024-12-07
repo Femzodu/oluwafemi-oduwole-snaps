@@ -27,6 +27,7 @@
 //   font-weight: 400;
 //   text-decoration: none;
 //   color: inherit;
+//   font-family: "Newsreader";
 
 //   @include tablet {
 //     color: #0c1e1a;
@@ -40,104 +41,3 @@
 //     }
 //   }
 // }
-
-.footer {
-  padding-top: 2rem;
-  position: relative;
-  background-color: #effaf7;
-
-  @include desktop {
-    display: flex;
-    justify-content: space-between;
-  }
-
-  &__container {
-    @include tablet {
-      display: flex;
-      flex-direction: row;
-      justify-content: space-between;
-    }
-
-    @include desktop {
-      margin-bottom: 8rem;
-    }
-  }
-
-  &__menu {
-    padding-top: 2rem;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;
-    gap: 1rem;
-
-    @include tablet {
-      padding-top: 0;
-      padding-bottom: 12rem;
-      flex-direction: row;
-      width: 50%;
-    }
-  }
-
-  &__link {
-    font-family: "Outfit";
-    font-weight: 800;
-    color: #0c1e1a;
-    text-decoration: none;
-  }
-
-  &__social {
-    padding: 2rem 0;
-    height: 5.8rem;
-    display: flex;
-    gap: 1rem;
-
-    @include desktop {
-      padding: 0;
-      align-items: flex-start;
-    }
-
-    &-link {
-      text-decoration: none;
-      cursor: pointer;
-    }
-  }
-
-  &__social--icon {
-    fill: #1e6655;
-    width: 5vw;
-
-    @include tablet {
-      width: 4.5vw;
-    }
-
-    @include desktop {
-      width: 1.95vw;
-    }
-  }
-
-  &__legal {
-    display: flex;
-    align-items: center;
-    color: #b7cec9;
-    font-size: 0.9375rem;
-    padding-bottom: 2rem;
-    gap: 1rem;
-
-    @include tablet {
-      padding-bottom: 3.5rem;
-    }
-
-    @include desktop {
-      padding-bottom: 3.5rem;
-      position: absolute;
-      bottom: 0;
-      left: 0;
-    }
-  }
-}
-
-.brand {
-  @include desktop {
-    width: 65vw;
-  }
-}
