@@ -4,6 +4,7 @@ import api from "../../utils/api";
 import PhotoHeader from "../../components/PhotoHeader/PhotoHeader";
 import PhotoImage from "../../components/PhotoImage/PhotoImage";
 import CommentSection from "../../components/CommentSection/CommentSection";
+import "./PhotoDetailsPage.scss";
 
 const PhotoDetails = () => {
   const { id } = useParams();
@@ -60,7 +61,7 @@ const PhotoDetails = () => {
   return (
     <div className="photo-details">
       <PhotoHeader />
-      <main>
+      <main className="photo-details__content">
         <PhotoImage photo={photo} />
         <CommentSection
           comments={comments}

@@ -1,3 +1,7 @@
+@use "../../styles/partials/global" as *;
+@use "../../styles/partials/mixins" as *;
+@use "../../styles/partials/typography" as *;
+
 .photo-header {
   padding: 1rem;
 
@@ -6,9 +10,15 @@
     justify-content: space-between;
     text-decoration: none;
     padding-top: 2rem;
+    padding-bottom: 2rem;
   }
 
   &__home {
     text-decoration: none;
+    font-size: 1.5rem;
+    color: #1e6655;
+    align-items: center;
+    display: flex;
+    gap: 0.5rem;
   }
 }

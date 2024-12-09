@@ -1,0 +1,91 @@
+@use "../../styles/partials/global" as *;
+@use "../../styles/partials/mixins" as *;
+@use "../../styles/partials/typography" as *;
+
+.comment {
+  &__chat {
+    padding-top: 2rem;
+  }
+
+  &__form {
+    margin-bottom: 2rem;
+  }
+
+  &__input-container {
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__input-name {
+    width: 100%;
+    height: 30px;
+    border-radius: 0.75rem;
+    padding: 0.5rem 0.5rem;
+    border: #e4efec 0.0625rem solid;
+  }
+
+  &__input-comment {
+    width: 100%;
+    height: 4.5rem;
+    border-radius: 0.75rem;
+    padding: 0.5rem 0.5rem;
+    border: #e4efec 0.0625rem solid;
+  }
+
+  &__label {
+    padding-bottom: 0.5rem;
+    padding-top: 1rem;
+  }
+
+  &__user-comments {
+    padding-top: 0.5rem;
+    font-weight: 600;
+    font-family: "Outfit";
+  }
+
+  &__comments {
+    padding-bottom: 4rem;
+  }
+
+  &__namedate {
+    font-weight: 600;
+    font-family: "Outfit";
+    color: #1e6655;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  &__hr-line {
+    margin: 1rem 0;
+    background-color: #b7cec9;
+    border-width: 0;
+    height: 0.125rem;
+  }
+
+  &__button-container {
+    display: flex;
+    justify-content: flex-end;
+    padding-top: 1rem;
+  }
+
+  &__comment-name {
+    font-weight: 600;
+    font-family: "Outfit";
+  }
+
+  &__button {
+    background-color: #1e6655;
+    color: #ffffff;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 0.45rem;
+    font-size: 0.875rem;
+    cursor: pointer;
+
+    &:hover {
+      background-color: #00695c;
+    }
+  }
+}
