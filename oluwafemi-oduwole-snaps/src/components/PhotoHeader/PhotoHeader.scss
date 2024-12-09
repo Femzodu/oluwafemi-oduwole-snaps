@@ -1,0 +1,14 @@
+.photo-header {
+  padding: 1rem;
+
+  &__header {
+    display: flex;
+    justify-content: space-between;
+    text-decoration: none;
+    padding-top: 2rem;
+  }
+
+  &__home {
+    text-decoration: none;
+  }
+}

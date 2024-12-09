@@ -7,9 +7,9 @@ const CommentSection = ({
   handleFormSubmit,
 }) => {
   return (
-    <div className="photo-details__chat">
-      <form className="photo-details__form" onSubmit={handleFormSubmit}>
-        <div className="photo-details__input-container">
+    <div className="comment__chat">
+      <form className="comment__form" onSubmit={handleFormSubmit}>
+        <div className="comment__input-container">
           <label>Name</label>
           <input
             type="text"
@@ -20,7 +20,7 @@ const CommentSection = ({
           />
         </div>
 
-        <div className="photo-details__input-container">
+        <div className="comment__input-container">
           <label>Comment</label>
           <textarea
             value={newComment.comment}
@@ -32,10 +32,10 @@ const CommentSection = ({
         <button type="submit">Submit</button>
       </form>
 
-      <div className="photo-details__comments">
+      <div className="comment__comments">
         <div>{comments.length} Comments</div>
         {comments.map((comment) => (
-          <div key={comment.id} className="photo-details__comment">
+          <div key={comment.id} className="comment__comment">
             <div>
               <div>{comment.name}</div>
               <time dateTime={comment.timestamp}>

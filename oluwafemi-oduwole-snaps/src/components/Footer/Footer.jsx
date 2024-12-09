@@ -63,8 +63,8 @@ const Footer = () => {
                 maskUnits="userSpaceOnUse"
                 x="0"
                 y="0"
-                // width="20"
-                // height="20"
+                width="20"
+                height="20"
               >
                 <path d="M0 0H20V20H0V0Z" fill="white" />
               </mask>

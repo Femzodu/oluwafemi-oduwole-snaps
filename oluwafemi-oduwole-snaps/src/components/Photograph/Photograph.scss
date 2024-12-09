@@ -6,19 +6,6 @@
   border: 1px solid #b7cec9;
   background-color: #e4efec;
   border-radius: 0.5rem;
-  // padding-right: 1rem;
-
-  @include tablet {
-    width: 45%;
-
-    @include desktop {
-      width: 30vw;
-
-      .gallery--filtered & {
-        width: 48%;
-      }
-    }
-  }
 
   &__image-container {
     position: relative;

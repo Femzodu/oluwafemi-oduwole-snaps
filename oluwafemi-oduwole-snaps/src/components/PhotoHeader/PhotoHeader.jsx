@@ -1,15 +1,16 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import "./PhotoHeader.scss";
 
 const PhotoHeader = () => {
   return (
-    <header className="photo-details__header">
+    <header className="photo-header__header">
       <Link to="/" className="brand">
         Snaps
       </Link>
-      <Link to="/" className="photo-details__home">
+      <Link to="/" className="photo-header__home">
         <svg
-          className="photo-details__home--button"
+          className="photo-header__button"
           width="21"
           height="15"
           viewBox="0 0 21 15"

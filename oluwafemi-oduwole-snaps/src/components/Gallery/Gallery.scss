@@ -17,4 +17,20 @@
       margin-right: 10%;
     }
   }
+
+  &__photo-link {
+    @include tablet {
+      display: flex;
+      justify-content: space-around;
+      width: 48%;
+    }
+
+    @include desktop {
+      width: 32%;
+
+      &.gallery__photo-link--filtered {
+        width: 48%;
+      }
+    }
+  }
 }

@@ -69,7 +69,7 @@ function HomePage() {
   };
 
   return (
-    <div className="app">
+    <div className="">
       <Header
         isFilterOpen={isFilterOpen}
         onFilterButtonClick={handleFilterButtonClick}

@@ -14,7 +14,13 @@ const Gallery = ({ selectedFilters, isFilterOpen, photos }) => {
   return (
     <div className={`gallery ${isFilterOpen ? "gallery--filtered" : ""}`}>
       {filteredPhotos.map((photo, index) => (
-        <Link to={`/photos/${photo.id}`} key={photo.id}>
+        <Link
+          className={`gallery__photo-link ${
+            isFilterOpen ? "gallery__photo-link--filtered" : ""
+          }`}
+          to={`/photos/${photo.id}`}
+          key={photo.id}
+        >
           <Photograph key={index} photo={photo} />
         </Link>
       ))}
