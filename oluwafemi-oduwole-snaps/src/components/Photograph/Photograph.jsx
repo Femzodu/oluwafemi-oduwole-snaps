@@ -14,7 +14,7 @@ const Photograph = ({ photo }) => {
       <div className="photograph__tag-list">
         {photo.tags.map((tag, index) => (
           <p key={index} className="photograph__tag">
-            {tag}
+            <span className="photograph__tag-text">{tag}</span>
           </p>
         ))}
       </div>

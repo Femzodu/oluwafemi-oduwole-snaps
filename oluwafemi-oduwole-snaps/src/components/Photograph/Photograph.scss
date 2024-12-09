@@ -38,20 +38,19 @@
 
   &__tag {
     background-color: #ffffff;
-    padding: 0.5rem 0.5rem;
-    padding-left: 1rem;
-    padding-right: 1rem;
-    padding-top: 0.5rem;
-    padding-bottom: 0.5rem;
+    padding: 0.5rem 1rem;
     border-radius: 0.75rem;
     font-weight: 900;
     color: #0c1e1a;
     font-size: 0.75rem;
-    text-decoration: none;
-
     align-items: center;
     border: 0.125rem solid #b7cec9;
     font-family: "Outfit";
+
+    &-text {
+      text-decoration: none;
+      display: inline-block;
+    }
   }
 
   &__tag-list {
@@ -60,7 +59,6 @@
     padding: 0.5rem;
     flex-wrap: wrap;
     justify-content: flex-start;
-    text-decoration: none;
   }
 
   &__image {
