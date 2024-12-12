@@ -13,14 +13,35 @@ const PhotoDetails = () => {
   const [comments, setComments] = useState([]);
   const [newComment, setNewComment] = useState({ name: "", comment: "" });
   const [error, setError] = useState(null);
+  const [feedback, setFeedback] = useState(null);
+
+  const validateForm = () => {
+    if (!newComment.name.trim()) {
+      setError("Name is required.");
+      return false;
+    }
+    if (!newComment.comment.trim()) {
+      setError("Comment is required.");
+      return false;
+    }
+    setError(null);
+    return true;
+  };
 
   useEffect(() => {
     const loadPhotoDetails = async () => {
       try {
-        const photo = await api.fetchPhotoById(id);
+        const [photo, commentData] = await Promise.all([
+          api.fetchPhotoById(id),
+          api.fetchComments(id),
+        ]);
         setPhoto(photo);
+        setComments(commentData);
       } catch (error) {
-        setError("Unable to retrieve photo details");
+        setError({
+          photo: "Unable to retrieve photo details",
+          photos: "Unable to retrieve comments",
+        });
         console.error(error);
       }
     };
@@ -44,12 +65,13 @@ const PhotoDetails = () => {
 
   const handleFormSubmit = async (e) => {
     e.preventDefault();
+    if (!validateForm()) return;
     try {
-      const newCommentResponse = await api.postComment(id, newComment);
+      await api.postComment(id, newComment);
       setNewComment({ name: "", comment: "" });
-      const updatedComments = [newCommentResponse];
-      comments.forEach((comment) => updatedComments.push(comment));
+      const updatedComments = await api.fetchComments(id);
       setComments(updatedComments);
+      setFeedback("Your comment was successfully posted");
     } catch (error) {
       setError("Unable to post comment");
       console.error(error);

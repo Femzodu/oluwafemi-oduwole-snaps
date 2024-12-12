@@ -14,31 +14,25 @@ function HomePage() {
   const [photos, setPhotos] = useState([]);
 
   useEffect(() => {
-    const loadTags = async () => {
+    document.title = "Snaps - Photo Details Page";
+    const loadData = async () => {
       try {
-        const tagData = await api.fetchTags();
+        const [tagData, photoData] = await Promise.all([
+          api.fetchTags(),
+          api.fetchPhotos(),
+        ]);
         setTags(tagData);
-      } catch (error) {
-        setError("Unable to retrieve filters");
-        console.error(error);
-      }
-    };
-
-    loadTags();
-  }, []);
-
-  useEffect(() => {
-    const loadPhotos = async () => {
-      try {
-        const photoData = await api.fetchPhotos();
         setPhotos(photoData);
       } catch (error) {
-        setError("Unable to retrieve images");
+        setError({
+          tags: "Unable to retrieve filters",
+          photos: "Unable to retrieve images",
+        });
         console.error(error);
       }
     };
 
-    loadPhotos();
+    loadData();
   }, []);
 
   const getFilteredPhotos = () => {
@@ -89,7 +83,7 @@ function HomePage() {
           <Gallery
             selectedFilters={selectedFilters}
             isFilterOpen={isFilterOpen}
-            photos={photos}
+            photos={getFilteredPhotos()}
           />
         </div>
       </main>

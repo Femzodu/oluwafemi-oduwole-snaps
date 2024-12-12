@@ -1,4 +1,3 @@
-import React from "react";
 import "./Mission.scss";
 
 const Mission = () => {

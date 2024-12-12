@@ -1,4 +1,3 @@
-import React from "react";
 import "./PhotoImage.scss";
 
 const PhotoImage = ({ photo }) => {
