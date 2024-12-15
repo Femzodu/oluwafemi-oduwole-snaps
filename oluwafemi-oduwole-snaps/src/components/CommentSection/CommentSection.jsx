@@ -98,6 +98,12 @@ const CommentSection = ({
         <div>{comments.length} Comments</div>
         {comments
           .sort((a, b) => new Date(b.timestamp) - new Date(a.timestamp))
+          .sort((a, b) => {
+            const dateA = new Date(a.timestamp).getTime();
+            const dateB = new Date(b.timestamp).getTime();
+            return dateB - dateA;
+          })
+
           .map((comment) => (
             <div key={comment.id} className="comment__comment">
               <hr className="comment__hr-line" />

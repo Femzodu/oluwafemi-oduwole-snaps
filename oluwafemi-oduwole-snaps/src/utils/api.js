@@ -1,11 +1,14 @@
 import axios from "axios";
 
-const api_url = "https://unit-3-project-c5faaab51857.herokuapp.com";
-const api_key = "fa357145-13ad-44a6-a344-6e999901551d";
+const api_url = "";
+const api_key = "";
+
+const VITE_BASE_URL = import.meta.env.VITE_BASE_URL;
+const VITE_PORT = import.meta.env.VITE_PORT;
 
 const fetchTags = async () => {
   try {
-    const response = await axios.get(`${api_url}/tags?api_key=${api_key}`);
+    const response = await axios.get(`${VITE_BASE_URL}${VITE_PORT}/tags`);
     return response.data;
   } catch (error) {
     console.error("Unable to retrieve filters", error);
@@ -14,7 +17,7 @@ const fetchTags = async () => {
 
 const fetchPhotos = async () => {
   try {
-    const response = await axios.get(`${api_url}/photos?api_key=${api_key}`);
+    const response = await axios.get(`${VITE_BASE_URL}${VITE_PORT}/photos`);
     return response.data;
   } catch (error) {
     console.error("Unable to retrieve pictures", error);
@@ -24,7 +27,7 @@ const fetchPhotos = async () => {
 const fetchPhotoById = async (id) => {
   try {
     const response = await axios.get(
-      `${api_url}/photos/${id}?api_key=${api_key}`
+      `${VITE_BASE_URL}${VITE_PORT}/photos/${id}`
     );
     return response.data;
   } catch (error) {
@@ -35,7 +38,7 @@ const fetchPhotoById = async (id) => {
 const fetchComments = async (id) => {
   try {
     const response = await axios.get(
-      `${api_url}/photos/${id}/comments?api_key=${api_key}`
+      `${VITE_BASE_URL}${VITE_PORT}/comments/${id}`
     );
     return response.data;
   } catch (error) {
@@ -46,8 +49,11 @@ const fetchComments = async (id) => {
 const postComment = async (id, comment) => {
   try {
     const response = await axios.post(
-      `${api_url}/photos/${id}/comments?api_key=${api_key}`,
-      { name: comment.name, comment: comment.comment }
+      `${VITE_BASE_URL}${VITE_PORT}/comments/${id}`,
+      {
+        name: comment.name,
+        comment: comment.comment,
+      }
     );
     return response.data;
   } catch (error) {

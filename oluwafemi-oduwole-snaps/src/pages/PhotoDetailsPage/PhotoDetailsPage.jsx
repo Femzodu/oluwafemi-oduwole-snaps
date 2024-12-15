@@ -14,6 +14,7 @@ const PhotoDetails = () => {
   const [newComment, setNewComment] = useState({ name: "", comment: "" });
   const [error, setError] = useState(null);
   const [feedback, setFeedback] = useState(null);
+  document.title = "Snaps - Photo Details Page";
 
   const validateForm = () => {
     if (!newComment.name.trim()) {
@@ -31,36 +32,19 @@ const PhotoDetails = () => {
   useEffect(() => {
     const loadPhotoDetails = async () => {
       try {
-        const [photo, commentData] = await Promise.all([
+        const [photoData, commentData] = await Promise.all([
           api.fetchPhotoById(id),
           api.fetchComments(id),
         ]);
-        setPhoto(photo);
-        setComments(commentData);
+        setPhoto(photoData);
+        setComments(commentData || []);
       } catch (error) {
-        setError({
-          photo: "Unable to retrieve photo details",
-          photos: "Unable to retrieve comments",
-        });
+        setError("Unable to load photo details and comments");
         console.error(error);
       }
     };
 
     loadPhotoDetails();
-  }, [id]);
-
-  useEffect(() => {
-    const loadComments = async () => {
-      try {
-        const commentData = await api.fetchComments(id);
-        setComments(commentData);
-      } catch (error) {
-        setError("Unable to retrieve comments");
-        console.error(error);
-      }
-    };
-
-    loadComments();
   }, [id]);
 
   const handleFormSubmit = async (e) => {

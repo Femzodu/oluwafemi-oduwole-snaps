@@ -13,6 +13,8 @@ function HomePage() {
   const [error, setError] = useState(null);
   const [photos, setPhotos] = useState([]);
 
+  document.title = "Snaps - Home Page";
+
   useEffect(() => {
     document.title = "Snaps - Photo Details Page";
     const loadData = async () => {
