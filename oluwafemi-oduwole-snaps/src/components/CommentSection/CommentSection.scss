@@ -18,10 +18,24 @@
 
   &__input-name {
     width: 100%;
-    height: 30px;
+    height: 1.875rem;
     border-radius: 0.75rem;
     padding: 0.5rem 0.5rem;
-    border: #e4efec 0.0625rem solid;
+    border: #e4efec 0.125rem solid;
+    font-family: "Outfit";
+
+    &:focus {
+      outline: none;
+      border-color: #1e6655;
+    }
+
+    &.error {
+      border-color: #b10606;
+    }
+
+    @include tablet {
+      height: 2.5rem;
+    }
   }
 
   &__input-comment {
@@ -29,7 +43,25 @@
     height: 4.5rem;
     border-radius: 0.75rem;
     padding: 0.5rem 0.5rem;
-    border: #e4efec 0.0625rem solid;
+    border: #e4efec 0.125rem solid;
+    font-family: "Outfit";
+
+    &:focus {
+      outline: none;
+      border-color: #1e6655;
+    }
+
+    &.error {
+      border-color: #b10606;
+    }
+  }
+
+  &__message {
+    font-family: "Outfit";
+
+    &.error {
+      color: #b10606;
+    }
   }
 
   &__label {
