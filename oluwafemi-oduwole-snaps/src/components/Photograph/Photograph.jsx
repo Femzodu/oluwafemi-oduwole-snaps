@@ -14,7 +14,6 @@ const Photograph = ({ photo }) => {
           alt="Photo Description"
         />
 
-        {/* {console.log(`${VITE_BASE_URL}${VITE_PORT}/${photo.photo}`)} */}
         <p className="photograph__photographer">{photo.photographer}</p>
       </div>
       <div className="photograph__tag-list">

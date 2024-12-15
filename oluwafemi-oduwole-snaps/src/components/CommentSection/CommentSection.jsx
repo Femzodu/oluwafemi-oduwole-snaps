@@ -58,12 +58,9 @@ const CommentSection = ({
             className={`comment__input-name ${error.name ? "error" : ""}`}
             type="text"
             value={newComment.name}
-            onChange={(e) => {
-              setNewComment({ ...newComment, name: e.target.value });
-              if (error.name) {
-                setError({ ...error, name: false });
-              }
-            }}
+            onChange={(e) =>
+              setNewComment({ ...newComment, name: e.target.value })
+            }
           />
         </div>
 
@@ -97,7 +94,6 @@ const CommentSection = ({
       <div className="comment__comments">
         <div>{comments.length} Comments</div>
         {comments
-          .sort((a, b) => new Date(b.timestamp) - new Date(a.timestamp))
           .sort((a, b) => {
             const dateA = new Date(a.timestamp).getTime();
             const dateB = new Date(b.timestamp).getTime();
