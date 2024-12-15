@@ -12,10 +12,11 @@ function HomePage() {
   const [tags, setTags] = useState([]);
   const [error, setError] = useState(null);
   const [photos, setPhotos] = useState([]);
+
   document.title = "Snaps - Home Page";
 
   useEffect(() => {
-    const loadData = async () => {
+    const loadTags = async () => {
       try {
         const tagData = await api.fetchTags();
         setTags(tagData);

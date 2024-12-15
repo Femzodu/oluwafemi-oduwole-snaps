@@ -49,7 +49,7 @@ const fetchComments = async (id) => {
 const postComment = async (id, comment) => {
   try {
     const response = await axios.post(
-      `${VITE_BASE_URL}:${VITE_PORT}/photos/${id}/comments`,
+      `${VITE_BASE_URL}${VITE_PORT}/comments/${id}`,
       {
         name: comment.name,
         comment: comment.comment,

@@ -13,8 +13,6 @@ const PhotoDetails = () => {
   const [comments, setComments] = useState([]);
   const [newComment, setNewComment] = useState({ name: "", comment: "" });
   const [error, setError] = useState(null);
-<<<<<<< Updated upstream
-=======
   const [feedback, setFeedback] = useState(null);
   document.title = "Snaps - Photo Details Page";
 
@@ -30,17 +28,10 @@ const PhotoDetails = () => {
     setError(null);
     return true;
   };
->>>>>>> Stashed changes
 
   useEffect(() => {
     const loadPhotoDetails = async () => {
       try {
-<<<<<<< Updated upstream
-        const photo = await api.fetchPhotoById(id);
-        setPhoto(photo);
-      } catch (error) {
-        setError("Unable to retrieve photo details");
-=======
         const [photoData, commentData] = await Promise.all([
           api.fetchPhotoById(id),
           api.fetchComments(id),
@@ -49,7 +40,6 @@ const PhotoDetails = () => {
         setComments(commentData || []);
       } catch (error) {
         setError("Unable to load photo details and comments");
->>>>>>> Stashed changes
         console.error(error);
       }
     };

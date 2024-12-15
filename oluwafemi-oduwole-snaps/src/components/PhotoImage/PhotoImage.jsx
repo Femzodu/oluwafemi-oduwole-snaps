@@ -5,7 +5,7 @@ const PhotoImage = ({ photo }) => {
   return (
     <div className="photo-image">
       <img
-        src={photo.photo}
+        src={`${VITE_BASE_URL}${VITE_PORT}/${photo.photo}`}
         alt={photo.photoDescription}
         className="photo-image__image"
       />
