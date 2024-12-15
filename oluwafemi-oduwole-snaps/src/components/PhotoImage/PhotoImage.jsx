@@ -2,6 +2,8 @@ import React from "react";
 import "./PhotoImage.scss";
 
 const PhotoImage = ({ photo }) => {
+  const VITE_BASE_URL = import.meta.env.VITE_BASE_URL;
+  const VITE_PORT = import.meta.env.VITE_PORT;
   return (
     <div className="photo-image">
       <img
