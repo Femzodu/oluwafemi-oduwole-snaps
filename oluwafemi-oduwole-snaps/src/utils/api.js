@@ -35,7 +35,7 @@ const fetchPhotoById = async (id) => {
 const fetchComments = async (id) => {
   try {
     const response = await axios.get(
-      `${VITE_BASE_URL}${VITE_PORT}/comments/${id}`
+      `${VITE_BASE_URL}${VITE_PORT}/photos/${id}/comments`
     );
     return response.data;
   } catch (error) {
@@ -46,7 +46,7 @@ const fetchComments = async (id) => {
 const postComment = async (id, comment) => {
   try {
     const response = await axios.post(
-      `${VITE_BASE_URL}${VITE_PORT}/comments/${id}`,
+      `${VITE_BASE_URL}${VITE_PORT}/photos/${id}/comments`,
       {
         name: comment.name,
         comment: comment.comment,
